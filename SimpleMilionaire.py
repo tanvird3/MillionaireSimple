@@ -14,7 +14,7 @@
 
     int=.09
 
-    y=[2,3,5]
+    y=[2,3,5,7]
 
     target=1000000
 
@@ -37,9 +37,16 @@
 
     # Now calculate the instalment size
     PP=[mismil(xx,yy,int, target) for xx in id for yy in y]
+    
+    # break the one dimensional array into required matrix
+    p=np.array(PP).reshape(3,4)
 
+    # turn the matrix in data frame with proper row and column name
+    so=pd.DataFrame(p, columns=[y], index=[id])
+    
+    # no more required
     # All the combinations of Amount and Year
-    NN=[[ii,jj] for ii in id for jj in y]
+    #NN=[[ii,jj] for ii in id for jj in y]
 
     # Now the required Data Frame
-    SS=pd.DataFrame({'Cond': NN, 'Inst': PP})
+    #SS=pd.DataFrame({'Cond': NN, 'Inst': PP})
