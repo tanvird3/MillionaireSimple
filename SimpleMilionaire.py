@@ -39,7 +39,7 @@
     PP=[mismil(xx,yy,int, target) for xx in id for yy in y]
     
     # break the one dimensional array into required matrix
-    p=np.array(PP).reshape(3,4)
+    p=np.array(PP).reshape(len(id),len(y))
 
     # turn the matrix in data frame with proper row and column name
     so=pd.DataFrame(p, columns=[y], index=[id])
